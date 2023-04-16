@@ -1,15 +1,15 @@
-const getRandomInt = (min = 0, max = 1000) => {
-  if (min < 0 || max <= min) {
+const getRandomPositiveInteger = (a = 0, b = 1000) => {
+  if (a < 0 || b < 0) {
     return NaN;
   }
 
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  const lower = Math.ceil(Math.min(a, b));
+  const upper = Math.floor(Math.max(a, b));
 
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  return Math.floor(Math.random() * (upper - lower + 1) + lower);
 };
 
-const checkStringMaxLength = (str, maxLength) => str.length <= maxLength;
+const checkStringLength = (str, maxLength) => str.length <= maxLength;
 
-getRandomInt(1, 10);
-checkStringMaxLength('Мяу', 10);
+getRandomPositiveInteger(1, 10);
+checkStringLength('Мяу', 10);
