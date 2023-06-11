@@ -1,3 +1,1 @@
-import {getPhotos} from './data.js';
-
-console.log(getPhotos());
+import './gallery.js';
